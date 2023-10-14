@@ -1,3 +1,7 @@
+.djs-palette {
+  visibility: hidden;
+}
+
 * {
   box-sizing: border-box;
 }

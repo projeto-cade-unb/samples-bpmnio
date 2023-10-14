@@ -1,4 +1,4 @@
-# bpmn-js Minimap Example
+# bpmn-js Minimap Example without Palette
 
 This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [diagram-js-minimap](https://github.com/bpmn-io/diagram-js-minimap). It implements a BPMN 2.0 modeler with a minimap that lets you navigate the diagram.
 
