@@ -36,7 +36,7 @@ console.log('Awesome! Ready to navigate!');
 Checkout [`app/app.js`](app/app.js) for details.
 
 
-## Disable Palette
+## Disable Palette with CSS
 
 ```css
 .djs-palette {
@@ -44,6 +44,7 @@ Checkout [`app/app.js`](app/app.js) for details.
 }
 ```
 
+Checkout [`app/app.css`](app/ap.css) for details
 
 ## Run the Example
 
