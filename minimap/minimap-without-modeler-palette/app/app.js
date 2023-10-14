@@ -1,14 +1,9 @@
 import $ from 'jquery';
-
 import BpmnModeler from 'bpmn-js/lib/Modeler';
-
 import minimapModule from 'diagram-js-minimap';
-
 import diagramXML from '../resources/pizza-collaboration.bpmn';
 
-
 var container = $('#js-drop-zone');
-
 var canvas = $('#js-canvas');
 
 var bpmnModeler = new BpmnModeler({
@@ -32,7 +27,6 @@ async function openDiagram(xml) {
       .addClass('with-diagram');
 
     bpmnModeler.get('minimap').open();
-
     console.log('Awesome! Ready to navigate!');
 
   } catch (err) {
@@ -42,7 +36,6 @@ async function openDiagram(xml) {
       .addClass('with-error');
 
     container.find('.error pre').text(err.message);
-
     console.error(err);
   }
 }
@@ -55,15 +48,10 @@ function registerFileDrop(container, callback) {
     e.preventDefault();
 
     var files = e.dataTransfer.files;
-
     var file = files[0];
-
     var reader = new FileReader();
-
     reader.onload = function(e) {
-
       var xml = e.target.result;
-
       callback(xml);
     };
 
@@ -80,7 +68,6 @@ function registerFileDrop(container, callback) {
   container.get(0).addEventListener('dragover', handleDragOver, false);
   container.get(0).addEventListener('drop', handleFileSelect, false);
 }
-
 
 // file drag / drop ///////////////////////
 
@@ -99,15 +86,15 @@ $(function() {
 
   createNewDiagram();
 
-  var downloadLink = $('#js-download-diagram');
-  var downloadSvgLink = $('#js-download-svg');
+//  var downloadLink = $('#js-download-diagram');
+//  var downloadSvgLink = $('#js-download-svg');
 
-  $('.buttons a').click(function(e) {
-    if (!$(this).is('.active')) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  });
+//  $('.buttons a').click(function(e) {
+//    if (!$(this).is('.active')) {
+//      e.preventDefault();
+//      e.stopPropagation();
+//    }
+//  });
 
   function setEncoded(link, name, data) {
     var encodedData = encodeURIComponent(data);
@@ -146,8 +133,6 @@ $(function() {
 
   bpmnModeler.on('commandStack.changed', exportArtifacts);
 });
-
-
 
 // helpers //////////////////////
 
