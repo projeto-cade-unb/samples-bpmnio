@@ -1,7 +1,7 @@
 {
-  "name": "bpmn-js-example-minimap",
+  "name": "samples-bpmn-io-minimap-withmodeler-palette",
   "version": "0.0.0",
-  "description": "Use the diagram-js minimap with the bpmn-js modeler",
+  "description": "Sample Minimap in Diagram Modeler with Palette",
   "scripts": {
     "all": "run-s lint build",
     "build": "webpack --mode production",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bpmn-io/bpmn-js-examples"
+    "url": "https://github.com/projeto-cade/samples-bpmnio"
   },
   "keywords": [
     "bpmnjs-example"
   ],
   "author": {
-    "name": "Philipp Fromme",
-    "url": "https://github.com/philippfromme"
+    "name": "Marcio Junior Vieira",
+    "url": "https://github.com/marciojv"
   },
   "contributors": [
     {
