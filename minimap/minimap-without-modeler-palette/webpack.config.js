@@ -6,7 +6,7 @@ module.exports = {
   },
   output: {
     path: __dirname + '/public',
-    filename: 'app.js'
+    filename: 'camunda-sei-bpmnio-with-customs.js'
   },
   module: {
     rules: [
