@@ -1,69 +1,31 @@
-# bpmn-js Minimap Example
-## Without Palette
+# Webpack Frontend Starterkit
 
-This example uses [bpmn-js](https://github.com/bpmn-io/bpmn-js) and [diagram-js-minimap](https://github.com/bpmn-io/diagram-js-minimap). It implements a BPMN 2.0 modeler with a minimap that lets you navigate the diagram.
+A lightweight foundation for your next webpack based frontend project.
 
-![demo application screenshot](docs/screenshot.png)
-
-
-## Usage
-
-Add [diagram-js-minimap](https://github.com/bpmn-io/diagram-js-minimap) to your project:
-
-```sh
-npm install --save diagram-js-minimap
-```
-
-Now load the minimap module along with the [bpmn-js](https://github.com/bpmm-io/bpmn-js) instance:
-
-```javascript
-import BpmnModeler from 'bpmn-js/lib/Modeler';
-
-import minimapModule from 'diagram-js-minimap';
-
-var bpmnModeler = new BpmnModeler({
-  container: '#canvas',
-  additionalModules: [
-    minimapModule
-  ]
-});
-
-await bpmnModeler.importXML(xml);
-
-console.log('Awesome! Ready to navigate!');
-```
-
-Checkout [`app/app.js`](app/app.js) for details.
-
-
-## Disable Palette with CSS
-
-```css
-.djs-palette {
-  visibility: hidden;
-}
-```
-
-Checkout [`app/app.css`](app/ap.css) for details
-
-## Run the Example
-
-You need a [NodeJS](http://nodejs.org) development stack with [npm](https://npmjs.org) installed to build the project.
-
-To install all project dependencies execute
+### Installation
 
 ```sh
 npm install
 ```
 
-To start the example execute
+### Start Dev Server
 
 ```sh
 npm start
 ```
 
-To build the example into the `public` folder execute
+### Build Prod Version
 
 ```sh
-npm run all
+npm run build
 ```
+
+### Features:
+
+- ES6 Support via [babel](https://babeljs.io/) (v7)
+- JavaScript Linting via [eslint](https://eslint.org/)
+- SASS Support via [sass-loader](https://github.com/jtangelder/sass-loader)
+- Autoprefixing of browserspecific CSS rules via [postcss](https://postcss.org/) and [postcss-preset-env](https://github.com/csstools/postcss-preset-env)
+- Style Linting via [stylelint](https://stylelint.io/)
+
+When you run `npm run build` we use the [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) to move the css to a separate file. The css file gets included in the head of the `index.html`.
