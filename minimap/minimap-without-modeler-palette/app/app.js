@@ -13,17 +13,6 @@ var bpmnModeler = new BpmnModeler({
   ]
 });
 
-/* desabilita emelentos de manipulação click 
-var priority = 10000;
-var element = bpmnModeler;
-this.eventBus = this.bpmnJS.get("eventBus");
-
-eventBus.on('element.dblclick', priority, function(event) {
-  return false; // will cancel event
-});
-
-*/
-
 async function openDiagram(xml) {
 
   await bpmnModeler.importXML(xml);

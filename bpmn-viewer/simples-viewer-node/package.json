@@ -50,6 +50,7 @@
     "@babel/polyfill": "^7.12.1",
     "bpmn-js": "7.3.0",
     "core-js": "^3.26.1",
-    "diagram-js-minimap": "^4.1.0"
+    "diagram-js-minimap": "^4.1.0",
+    "raw-loader": "^4.0.2"
   }
 }
