@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>bpmn-js minimap demo</title>
 
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="vendor/diagram-js-minimap/assets/diagram-js-minimap.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
+
 <body>
   <div class="content" id="js-drop-zone">
 
@@ -23,17 +25,26 @@
       </div>
     </div>
 
-    <div style="display: flex; justify-content: center; align-items: center;">
-        Portal de BPMN Sample
-        Process 1
-       <div class="canvas" id="js-canvas1" style="width: 30%;"></div>
-       Process 2
-       <div class="canvas" id="js-canvas2" style="width: 30%;"></div>
-       <div class="canvas" id="js-canvas4" style="width: 30%;"></div>
-    </div>
-    <div class="canvas4" id="js-canvas4" style="width: 30%;"></div>
+    <h1>Canvas Grid</h1>
 
+    <div class="canvas-grid">
+      <div>
+        <h2>Process 1</h2>
+        <div class="canvas" id="js-canvas1"></div>
+      </div>
+
+      <div>
+        <h2>Process 2</h2>
+        <div class="canvas" id="js-canvas2"></div>
+      </div>
+
+      <div>
+        <h2>Process 3</h2>
+        <div class="canvas" id="js-canvas3"></div>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>
+
 </html>
