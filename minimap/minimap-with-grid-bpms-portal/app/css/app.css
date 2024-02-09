@@ -1,3 +1,9 @@
+#canvas {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
 .djs-palette {
   visibility: hidden;
 }
@@ -7,11 +13,8 @@
 }
 
 body, html {
-
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
   font-size: 12px;
-
   height: 100%;
   padding: 0;
   margin: 0;
@@ -60,7 +63,6 @@ a:link {
 .content.with-diagram .intro {
   display: none;
 }
-
 
 .content .canvas,
 .content.with-error .canvas {

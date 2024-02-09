@@ -2,6 +2,7 @@ import $ from 'jquery';
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 import minimapModule from 'diagram-js-minimap';
 import diagramXML from '../resources/pizza-collaboration.bpmn';
+import diagramXML2 from '../resources/AtoConcetracaoSumario.bpmn';
 
 var container = $('#js-drop-zone');
 var canvas1 = $('#js-canvas1');
@@ -40,7 +41,7 @@ var bpmnModeler4 = new BpmnModeler({
 });
 
 */
-async function openDiagram(xml) {
+async function openDiagram(xml,xml2) {
 
   await bpmnModeler1.importXML(xml);
   container
@@ -50,7 +51,7 @@ async function openDiagram(xml) {
   bpmnModeler1.get('minimap').open();
 
 
-  await bpmnModeler2.importXML(xml);
+  await bpmnModeler2.importXML(xml2);
   container
       .removeClass('with-error')
       .addClass('with-diagram');
@@ -75,6 +76,6 @@ async function openDiagram(xml) {
 }
 
 $(function() {
-  openDiagram(diagramXML)
+  openDiagram(diagramXML,diagramXML2)
 });
 
