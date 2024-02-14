@@ -103,22 +103,23 @@ a:link {
   opacity: 1;
 }
 
+.bjs-powered-by {
+  display: none;
+}
+
 .canvas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, auto));
-  gap: 10px;
-
-  > * {
-    padding: 1em;
-  }
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+  gap: 1em;
+  padding: 1em;
 
   .canvas {
+    display: inline-block;
+    padding: 1em;
     border: 1px solid black;
-    height: 360px;
-    font-size: 0.4px;
 
-    .viewport {
-      transform: scale(0.25);
+    * {
+      overflow: visible !important;
     }
   }
 }

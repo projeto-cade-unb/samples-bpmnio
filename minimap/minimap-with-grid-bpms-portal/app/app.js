@@ -1,48 +1,51 @@
 import $ from "jquery";
-import BpmnModeler from "bpmn-js/lib/Viewer";
-import diagramXML from "../resources/pizza-collaboration.bpmn";
-import diagramXML2 from "../resources/AtoConcetracaoSumario.bpmn";
-
-const container = $("#js-drop-zone");
+import Viewer from "bpmn-js/lib/Viewer";
+import pizzaDiagramXML from "../resources/pizza-collaboration.bpmn";
+import atoDiagramXML from "../resources/AtoConcetracaoSumario.bpmn";
 
 /**
  *
  * @param {string} xml
- * @param {BpmnModeler} viewer
+ * @param {Viewer} viewer
+ * @param {JQuery?} container
  */
-async function openDiagram(xml, viewer) {
-  await viewer.importXML(xml);
+async function openDiagram(xml, viewer, container) {
+  try {
+    await viewer.importXML(xml);
 
-  container.removeClass("with-error").addClass("with-diagram");
+    if (container) container.removeClass("with-error").addClass("with-diagram");
 
-  viewer.get("minimap").open();
-  viewer.get("canvas").zoom("fit-viewport");
+    const canvas = viewer.get("canvas");
 
-  const { inner } = viewer.get("canvas").viewbox();
+    canvas.zoom("fit-viewport");
 
-  canvas.zoom("fit-viewport", {
-    x: inner.x + inner.width / 2,
-    y: inner.y + inner.height / 2,
-  });
+    return viewer;
+  } catch (error) {
+    if (container) container.removeClass("with-diagram").addClass("with-error");
+
+    throw error;
+  }
 }
 
-openDiagram(
-  diagramXML,
-  new BpmnModeler({
-    container: "#js-canvas1",
-  })
-);
+const container = $("#js-drop-zone");
+const canvasGrid = $(".canvas-grid");
+const bpmList = [atoDiagramXML, pizzaDiagramXML];
 
-openDiagram(
-  diagramXML2,
-  new BpmnModeler({
-    container: "#js-canvas2",
-  })
-);
+for (let index = 1; index <= 100; index++) {
+  const canvasId = `canvas-${index}`;
 
-openDiagram(
-  diagramXML2,
-  new BpmnModeler({
-    container: "#js-canvas3",
-  })
-);
+  canvasGrid.prepend(`
+    <div>
+      <h2>Process ${index}</h2>
+      <div class="canvas" id="${canvasId}"></div>
+    </div>
+  `);
+
+  openDiagram(
+    bpmList[~~(bpmList.length * Math.random())],
+    new Viewer({
+      container: `#${canvasId}`,
+    }),
+    container
+  );
+}
