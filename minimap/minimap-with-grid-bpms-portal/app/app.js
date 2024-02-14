@@ -18,9 +18,12 @@ async function openDiagram(xml, viewer, container) {
     const canvas = viewer.get("canvas");
 
     canvas.zoom("fit-viewport");
+
+    return viewer;
   } catch (error) {
-    console.error(error);
     if (container) container.removeClass("with-diagram").addClass("with-error");
+
+    throw error;
   }
 }
 
