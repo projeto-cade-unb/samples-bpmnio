@@ -1,50 +1,35 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>bpmn-js demo</title>
 
-<head>
-  <title>bpmn-js minimap demo</title>
+    <link rel="stylesheet" href="vendor/bpmn-js/assets/diagram-js.css" />
+    <link rel="stylesheet" href="vendor/bpmn-js/assets/bpmn-js.css" />
+    <link
+      rel="stylesheet"
+      href="vendor/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
 
-  <link rel="stylesheet" href="vendor/bpmn-js/assets/diagram-js.css" />
-  <link rel="stylesheet" href="vendor/bpmn-js/assets/bpmn-js.css" />
-  <link rel="stylesheet" href="vendor/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css" />
-  <link rel="stylesheet" href="vendor/diagram-js-minimap/assets/diagram-js-minimap.css" />
-  <link rel="stylesheet" href="css/app.css" />
-</head>
+  <body>
+    <div class="content" id="js-drop-zone">
+      <div class="message error">
+        <div class="note">
+          <p>Ooops, we could not display the BPMN 2.0 diagram.</p>
 
-<body>
-  <div class="content" id="js-drop-zone">
-
-    <div class="message error">
-      <div class="note">
-        <p>Ooops, we could not display the BPMN 2.0 diagram.</p>
-
-        <div class="details">
-          <span>cause of the problem</span>
-          <pre></pre>
+          <div class="details">
+            <span>cause of the problem</span>
+            <pre></pre>
+          </div>
         </div>
       </div>
+
+      <h1>Canvas Grid</h1>
+
+      <div class="canvas-grid"></div>
     </div>
 
-    <h1>Canvas Grid</h1>
-
-    <div class="canvas-grid">
-      <div>
-        <h2>Process 1</h2>
-        <div class="canvas" id="js-canvas1"></div>
-      </div>
-
-      <div>
-        <h2>Process 2</h2>
-        <div class="canvas" id="js-canvas2"></div>
-      </div>
-
-      <div>
-        <h2>Process 3</h2>
-        <div class="canvas" id="js-canvas3"></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="app.js"></script>
-
+    <script src="app.js"></script>
+  </body>
 </html>
